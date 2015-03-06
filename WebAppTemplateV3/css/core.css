@@ -1,0 +1,205 @@
+/* -----------------------------------------
+	Fixed Width Layout with Border Template
+
+	Constants Defined in Style Sheet:
+	 -Layout Fixed Width                "CONST:FIXED-SIZE"
+     -Opacity Setting For Modal Dialogs "CONST:MODAL-OPACITY"
+   ----------------------------------------- */
+
+/* --- PRE SETUP --- */
+* {
+    margin: 0px;					/* IE6 hack for centering screen */
+    padding: 0px;					/* IE6 hack for centering screen */
+}
+
+
+body {
+	background-color: #FFFFFF;      
+	text-align: center;				/* IE7 and IE8 hack for centering screen */
+	font-family: Calibri, Sans-Serif;
+	
+}
+
+
+#outline {
+	margin-top: 0px;				/* distance from top  to screen edge */
+	margin-bottom: 20px;			/* distance from bottom to screen edge */
+	margin-right: auto;					/* center on screen */
+	margin-left: auto;		/* center on screen */
+	background-color: #FFFFFF;		/* reset font and color for body */
+	font-size: 13px;
+	text-align: left;
+	width: 1240px;                   /* CONST:FIXED-SIZE Fixed Width Layout Size*/
+	border-left: 1px solid #CCCCCC;
+	border-right: 1px solid #CCCCCC;
+	border-bottom: 1px solid #CCCCCC;
+}
+
+
+/* --- MAIN LAYOUT --- */
+#top {
+	height: 5px;					
+}
+
+
+#middle_top {
+	height: 14px;
+	background-color: #C40000;
+}
+
+
+#middle {
+	background-color: #C40000;
+}
+
+
+#middle_bottom {
+    clear: both;
+	height: 23px;	
+	background-color: #C40000;
+}
+
+
+#content {
+    padding-top: 0px;
+	padding-left: 35px;
+	padding-right:35px;
+}
+
+
+
+
+/* --- APPLICATION MESSAGE BAR --- */
+#broadcastMsg
+{
+    background-color: #eaaf51;
+    border-color: #d99a36;
+    text-align: center;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-top: 5px;
+    height: 25px;
+}
+
+
+.modal_background {
+    color: #000000;    
+    background-color: #DDDDDD;
+    text-align: center;
+    -moz-opacity: 0.70;                 /* "CONST:MODAL-OPACITY" opacity setting for mozilla */
+    opacity:.70;                        /* "CONST:MODAL-OPACITY" opacity setting for web kit */
+    filter: alpha(opacity=70);          /* "CONST:MODAL-OPACITY" opacity setting for web kit */
+    -ms-filter:alpha(opacity=70);       /* "CONST:MODAL-OPACITY" opacity setting for microsoft */
+    -ms-opacity:0.7;                    /* "CONST:MODAL-OPACITY" opacity setting for microsoft */
+}
+
+
+/* --- INPUT TOOLBAR --- */
+#toolbar_top {
+	background-color: #F5F5F5;
+	height: 30px;
+}
+
+
+#toolbar {
+    background-color: #F5F5F5;
+	padding-left: 40px;
+	padding-right: 40px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	text-align: center;
+	min-height: 70px;
+	overflow:auto;
+}
+
+
+#toolbar_bottom {
+    background-color: #F5F5F5;
+	height: 30px;
+	
+}
+
+
+.toolbar_element {
+    width: 30%;
+    float: right;
+    text-align: center;
+    
+}
+
+.toolbarbuttons
+{
+    width: 20%;
+    float: right;
+    height:100%;
+    margin-right: 10%;
+}
+
+.titlebutton
+{
+    margin-bottom: 8px;
+}
+
+.toolbar_element select 
+{
+    border-width: 1px;   
+    border-style: solid;
+    border-color: Gray;
+    font-family: Arial;
+    height: auto;
+}
+
+
+
+/* --- NAVIGATION TAB STRIP --- */
+#navigation {
+    background-image: url(../img/banner_header_background.png);
+    background-repeat: repeat;
+    height: 40px;
+    width: 100%;
+}
+
+
+.navigation_active a {
+    background-image: url(../img/tab_Button_Active.png);
+    background-repeat: repeat-x;
+    width: 50%;
+    height: 40px;
+    float: left;
+    text-align: center;
+    line-height: 40px;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+
+.navigation_inactive a {
+    background-image: url(../img/tab_Button_Inactive.png);
+    background-repeat: repeat-x;
+    width: 50%;
+    height: 40px;
+    float: left;
+    text-align: center;
+    line-height: 40px;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+}
+
+
+.navigation_inactive a:hover {
+    background-image: url(../img/tab_Button_Active.png);
+    background-repeat: repeat-x;
+    width: 50%;
+    height: 40px;
+    float: left;
+    text-align: center;
+    line-height: 40px;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+}
+

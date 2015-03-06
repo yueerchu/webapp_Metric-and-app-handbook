@@ -1,0 +1,60 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.Master.cs" Inherits="DevTemplateV3.WebApp.UI.Pages.MasterPage" %>
+
+<%@ Register Assembly="System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Namespace="System.Web.UI" TagPrefix="asp" %>
+<%@ Register Src="NavigationBarControl.ascx" TagName="NavigationBarControl" TagPrefix="uc1" %>
+<%@ Register Src="BroadcastMessageControl.ascx" TagName="BroadcastMessageControl" TagPrefix="uc1" %>
+<%@ Register Assembly="CoeHeader" Namespace="PMCOE.Common.UI" TagPrefix="cc1" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="uc1" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <meta http-equiv="X-UA-Compatible" content="IE=8" />
+    <head>
+        <title>Web App Template</title>
+        <link rel="stylesheet" type="text/css" href="../css/core.css"/>
+        <link rel="stylesheet" type="text/css" href="../css/app.css"/>
+        <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+        <script language="javascript" type="text/javascript" src="../jscript/jquery-1.8.3.min.js"></script>
+        <script language="javascript" type="text/javascript" src="../jscript/common.js"></script>
+    </head>
+    
+    <body>
+        <form id="mainForm" runat="server" defaultbutton="UselessDefaultButton"> 
+	        <div id="header">
+		        <cc1:CoeHeader ID="CoeHeaderSC" runat="server" />
+	        </div>
+
+            <uc1:BroadcastMessageControl runat="server" ID="AppMessage" Visible="false" /> 
+
+			<div id="navigation">
+		        <uc1:NavigationBarControl runat="server" ID="navBar" />
+			</div>
+
+            <div id="outline">
+                <asp:ContentPlaceHolder ID="PlaceHolderForToolbarSection" runat="server" />
+
+			    <div id="middle_top">
+                </div>
+
+
+			    <div id="middle">
+
+                    <%/* --- REQUIRED FOR AJAX CONTROLS --- */%>
+                    <uc1:ToolkitScriptManager ID="ScriptManagerForPopup" runat="server" />
+                    <asp:HiddenField ID="hdnField" runat="server" /> 
+
+				    <div id="content">
+                        <asp:ContentPlaceHolder ID="PlaceHolderForContentSection" runat="server" />
+                        <asp:Panel ID="LoadingPanel" runat="server" CssClass="Loading_Hidden">
+                            <asp:Image runat="server" ID="LoadingIcon" ImageUrl="../img/loading_timer.gif" />
+                        </asp:Panel>
+                    </div>
+			    </div>
+			    <div id="middle_bottom"></div>
+		    </div>
+
+            <asp:Button runat="server" ID="UselessDefaultButton" Visible="true" Width="0" Height="0" BorderWidth="0" BackColor="White" ForeColor="White" OnClientClick="return false;" />
+		</form>
+    </body>
+</html>
